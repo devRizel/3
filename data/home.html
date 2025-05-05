@@ -140,20 +140,20 @@ body.dark-mode a.icon {
         <div data-role="content" class="animated-heading">
             <input id="searchInput" list="searchOptions" placeholder="Search..." />
             <datalist id="searchOptions">
-              <option value="Milk Tea">
-              <option value="Shake">
-              <option value="Juice">
-                <option value="Others">
+                <option value="Best Sell">
+              <option value="Food">
+              <option value="Burger">
+              <option value="Spaghetti">
             </datalist>
             <script>
               const input = document.getElementById('searchInput');
               input.addEventListener('change', () => {
                 const value = input.value;
                 const links = {
-                  "Milk Tea": "milktea.html",
-                  "Shake": "shake.html",
-                  "Juice": "juice.html",
-                   "Others": "others.html"
+                    "Best Sell": "bestsell.html",
+                  "Food": "food.html",
+                  "Burger": "burger.html",
+                   "Spaghetti": "spaghetti.html"
                 };
                 if (links[value]) {
                   window.location.href = links[value];
@@ -162,7 +162,7 @@ body.dark-mode a.icon {
             </script>
         <br>
             <div id="extraContent">
-                <p style="font-size: 30px; text-align: center;">3
+                <p style="font-size: 30px; text-align: center;">Mi Cusina
 
                 </p>
             </div>

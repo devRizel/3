@@ -92,6 +92,22 @@
         .ui-btn1 {
             border-radius: 20px !important;
         }
+        .star-rating {
+    display: inline-flex;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.star {
+    font-size: 25px;
+    color: gray;
+    transition: color 0.2s;
+}
+
+.star.active {
+    color: gold;
+}
+
     </style>
 </head>
 <body>
@@ -122,12 +138,99 @@
                 <a href="#" id="closePopup" class="ui-btn ui-btn1" data-role="button" data-theme="a">No</a>
                 </div>
         </div>
-        <br> <br> <br>
+        <br><br>
+        <hr>
         <div role="main" class="ui-content" style="text-align: center;">
-           <h1 class="animated-heading">About</h1>
-            <p class="animated-heading" style="text-align: justify;">
-                Mi Cusina Menu is a mobile application designed to offer a digital version of the restaurant’s menu, making it easier for customers to explore their dining options. The app presents a visually appealing and organized menu, allowing users to browse through different categories of dishes, view detailed descriptions, and see high-quality images of each item. While it does not include ordering or reservation features, the app provides a comprehensive look at what Mi Cusina has to offer, helping customers decide on their meal before arriving. With its simple, user-friendly interface, Mi Cusina Menu enhances the customer experience by providing an easy way to explore the restaurant’s offerings anytime, anywhere.
-</p>
+            <a class="animated-heading" href="#popup1" data-rel="popup" data-position-to="window" data-transition="fade">
+                <img src="../includes/img/b1.jpg" height="200" width="200px" alt="">
+            </a>
+            <center>
+                <a href="#popup1" data-rel="popup" data-position-to="window" data-transition="fade"
+                style="text-decoration: none; color: rgb(75, 72, 72);"
+                 >
+                    <p class="animated-heading">More Details</p>
+                </a>
+                <!-- <div class="star-rating rate1" data-item="b1">
+                    <input type="hidden" id="rating-value-b1" name="rating" value="0">
+                    <span class="star" data-value="1">&#9733;</span>
+                    <span class="star" data-value="2">&#9733;</span>
+                    <span class="star" data-value="3">&#9733;</span>
+                    <span class="star" data-value="4">&#9733;</span>
+                    <span class="star" data-value="5">&#9733;</span>
+                </div> -->
+            </center>            
+            <div data-role="popup" id="popup1" data-overlay-theme="b" data-corners="false" style="max-height: 80vh; overflow-y: auto;">
+                <div style="padding: 10px;">
+                    <img  class="popphoto " src="../includes/img/b1.jpg" style="max-height: 512px; width: 100%; height: auto;">
+                    <center>
+                        <p >
+                            Chicken Burger Spaghetti with Drinks P89
+                        </p>
+                    </center>
+                </div>
+            </div>
+            <hr>
+            <a class="animated-heading" href="#popup2" data-rel="popup" data-position-to="window" data-transition="fade">
+                <img src="../includes/img/b2.jpg" height="200" width="200px" alt="">
+            </a>
+            <center>
+                <a href="#popup2" data-rel="popup" data-position-to="window" data-transition="fade"
+                style="text-decoration: none; color: rgb(75, 72, 72);"
+                 >
+                    <p class="animated-heading">More Details</p>
+                </a>
+            </center>            
+            <div data-role="popup" id="popup2" data-overlay-theme="b" data-corners="false" style="max-height: 80vh; overflow-y: auto;">
+                <div style="padding: 10px;">
+                    <img class="popphoto" src="../includes/img/b2.jpg" style="max-height: 512px; width: 100%; height: auto;">
+                    <center>
+                        <p class="animated-heading" >
+                            Chiken Burger 45 | with Drinks P55
+                        </p>
+                    </center>
+                </div>
+            </div>
+            <hr>
+            <a class="animated-heading" href="#popup1" data-rel="popup" data-position-to="window" data-transition="fade">
+                <img src="../includes/img/b1.jpg" height="200" width="200px" alt="">
+            </a>
+            <center>
+                <a href="#popup1" data-rel="popup" data-position-to="window" data-transition="fade" style="text-decoration: none; color: rgb(75, 72, 72);">
+                    <p class="animated-heading">More Details</p>
+                </a>
+
+            </center>       
+            <div data-role="popup" id="popup3" data-overlay-theme="b" data-corners="false" style="max-height: 80vh; overflow-y: auto;">
+                <div style="padding: 10px;">
+                    <img class="popphoto" src="../includes/img/b3.jpg" style="max-height: 512px; width: 100%; height: auto;">
+                    <center>
+                        <p >
+                            Chiken Adobo Bunwich with Drinks P55
+                        </p>
+                    </center>
+                </div>
+            </div>
+            <hr>
+                <a class="animated-heading" href="#popup1" data-rel="popup" data-position-to="window" data-transition="fade">
+                    <img src="../includes/img/b1.jpg" height="200" width="200px" alt="">
+                </a>
+                <center>
+                    <a href="#popup1" data-rel="popup" data-position-to="window" data-transition="fade" style="text-decoration: none; color: rgb(75, 72, 72);">
+                        <p class="animated-heading">More Details</p>
+                    </a>
+
+                </center>
+            <div data-role="popup" id="popup4" data-overlay-theme="b" data-corners="false" style="max-height: 80vh; overflow-y: auto;">
+                <div style="padding: 10px;">
+                    <img class="popphoto" src="../includes/img/b4.jpg" style="max-height: 512px; width: 100%; height: auto;">
+                    <center>
+                        <p >
+                            Egg Bunwich 24 | with Drinks 32
+                        </p>
+                    </center>
+                </div>
+            </div>
+            <br><br><br><br><br><br><br>
         </div>
         <script src="../includes/js/js/index.js"></script>
         <script type="text/javascript">
@@ -187,7 +290,46 @@
                 $("#menuIcon").removeClass("right");
             });
         </script>
-        
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const stars = document.querySelectorAll('.star-rating .star');
+    
+    // Load saved ratings for each item
+    const storagePrefix = 'savedStarRating-';
+    
+    // Handle star click and store ratings in localStorage
+    stars.forEach(function (star) {
+        star.addEventListener('click', function () {
+            const itemId = this.closest('.star-rating').getAttribute('data-item');
+            const rating = parseInt(this.getAttribute('data-value'));
+            
+            // Save the rating for this specific item
+            localStorage.setItem(storagePrefix + itemId, rating);
+            highlightStars(itemId, rating);
+        });
+    });
+    
+    // Load ratings on page load
+    document.querySelectorAll('.star-rating').forEach(function (ratingElement) {
+        const itemId = ratingElement.getAttribute('data-item');
+        const savedRating = parseInt(localStorage.getItem(storagePrefix + itemId)) || 0;
+        highlightStars(itemId, savedRating);
+    });
+
+    // Function to highlight stars based on rating
+    function highlightStars(itemId, rating) {
+        const starsForItem = document.querySelectorAll(`.star-rating[data-item="${itemId}"] .star`);
+        starsForItem.forEach((star, index) => {
+            star.classList.toggle('active', index < rating);
+        });
+        // Set the value of the hidden input for each item
+        const hiddenInput = document.getElementById(`rating-value-${itemId}`);
+        if (hiddenInput) {
+            hiddenInput.value = rating;
+        }
+    }
+});
+    </script>    
     </div>
 </body>
 </html> 
